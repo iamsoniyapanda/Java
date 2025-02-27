@@ -1,0 +1,18 @@
+// Write a java program to create 2D array and access the array element.
+public class TwoDArrayExample {
+    public static void main(String[] args) {
+        // Create a 2D array (3 rows and 3 columns)
+        int[][] matrix = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+
+        // Access and print elements of the 2D array
+        System.out.println("Element at (0, 0): " + matrix[0][0]); // Accessing element at row 0, column 0
+        System.out.println("Element at (0, 1): " + matrix[0][1]); // Accessing element at row 0, column 1
+        System.out.println("Element at (1, 2): " + matrix[1][2]); // Accessing element at row 1, column 2
+        System.out.println("Element at (2, 1): " + matrix[2][1]); // Accessing element at row 2, column 1
+        System.out.println("Element at (2, 2): " + matrix[2][2]); // Accessing element at row 2, column 2
+    }
+}

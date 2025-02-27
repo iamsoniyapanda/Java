@@ -1,0 +1,14 @@
+//Write a java program to create a simple array and access array element.
+public class ArrayExample {
+    public static void main(String[] args) {
+        // Create an array of integers
+        int[] numbers = {10, 20, 30, 40, 50};
+
+        // Access and print the elements of the array
+        System.out.println("First element: " + numbers[0]);  // Accessing the first element
+        System.out.println("Second element: " + numbers[1]); // Accessing the second element
+        System.out.println("Third element: " + numbers[2]);  // Accessing the third element
+        System.out.println("Fourth element: " + numbers[3]); // Accessing the fourth element
+        System.out.println("Fifth element: " + numbers[4]);  // Accessing the fifth element
+    }
+}

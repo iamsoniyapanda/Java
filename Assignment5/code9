@@ -1,0 +1,52 @@
+ //Create a “circle” class & a “point” class. The coordinates of the circle are given and used within the “circle” class as object of the “point” class. Display the area of circle
+// Point class to represent the coordinates of a point
+class Point {
+    // Instance variables for x and y coordinates
+    double x, y;
+
+    // Constructor to initialize coordinates
+    public Point(double x, double y) {
+        this.x = x;
+        this.y = y;
+    }
+}
+
+// Circle class that uses the Point class for the center and calculates area
+class Circle {
+    // Instance variable for radius
+    double radius;
+    // Object of Point class to represent the center of the circle
+    Point center;
+
+    // Constructor to initialize radius and center of the circle
+    public Circle(double radius, Point center) {
+        this.radius = radius;
+        this.center = center;
+    }
+
+    // Method to calculate the area of the circle
+    public double calculateArea() {
+        return Math.PI * radius * radius;
+    }
+
+    // Method to display the details of the circle
+    public void displayDetails() {
+        System.out.println("Circle Details:");
+        System.out.println("Center: (" + center.x + ", " + center.y + ")");
+        System.out.println("Radius: " + radius);
+        System.out.println("Area of the Circle: " + calculateArea());
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Creating a Point object representing the center of the circle
+        Point center = new Point(5, 5); // Example center coordinates (5, 5)
+
+        // Creating a Circle object with a given radius and center
+        Circle myCircle = new Circle(7, center); // Radius of the circle is 7
+
+        // Display the details of the circle including its area
+        myCircle.displayDetails();
+    }
+}

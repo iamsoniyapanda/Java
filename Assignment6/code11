@@ -1,0 +1,38 @@
+//Implementation of final keyword before a variable.
+// Class to demonstrate the final keyword with variables
+public class FinalVariableExample {
+
+    // Final instance variable (can be initialized only once)
+    final int instanceVariable;
+
+    // Final class variable (static)
+    static final double PI = 3.14159;
+
+    // Constructor to initialize the final instance variable
+    public FinalVariableExample(int value) {
+        instanceVariable = value;
+    }
+
+    public void showValues() {
+        // Final local variable (can be assigned only once)
+        final int localVariable = 100;
+
+        // Display the values of the final variables
+        System.out.println("Instance Variable (final): " + instanceVariable);
+        System.out.println("Class Variable PI (final): " + PI);
+        System.out.println("Local Variable (final): " + localVariable);
+
+        // Uncommenting the following lines will result in a compilation error:
+        // instanceVariable = 200;  // Error: Cannot assign a value to final variable 'instanceVariable'
+        // PI = 3.14;  // Error: Cannot assign a value to final variable 'PI'
+        // localVariable = 200;  // Error: Cannot assign a value to final variable 'localVariable'
+    }
+
+    public static void main(String[] args) {
+        // Create an instance of the class and assign a value to the final instance variable
+        FinalVariableExample example = new FinalVariableExample(50);
+
+        // Call the method to display the values of the final variables
+        example.showValues();
+    }
+}

@@ -1,0 +1,61 @@
+// Write a java program to implement interface.
+// Defining the Shape interface
+interface Shape {
+    // Abstract method to calculate area
+    double calculateArea();
+    
+    // Default method that can be used by any class implementing the interface
+    default void displayShape() {
+        System.out.println("Displaying shape information.");
+    }
+}
+
+// Implementing the Shape interface in Circle class
+class Circle implements Shape {
+    private double radius;
+    
+    // Constructor to initialize the radius
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+    
+    // Implementing the calculateArea method for Circle
+    @Override
+    public double calculateArea() {
+        return Math.PI * radius * radius; // Area of circle = π * r^2
+    }
+}
+
+// Implementing the Shape interface in Rectangle class
+class Rectangle implements Shape {
+    private double length;
+    private double width;
+    
+    // Constructor to initialize length and width
+    public Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+    
+    // Implementing the calculateArea method for Rectangle
+    @Override
+    public double calculateArea() {
+        return length * width; // Area of rectangle = length * width
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Creating objects of Circle and Rectangle
+        Shape circle = new Circle(5.0);  // Circle with radius 5
+        Shape rectangle = new Rectangle(4.0, 6.0);  // Rectangle with length 4 and width 6
+
+        // Displaying shape information and area of circle
+        circle.displayShape();
+        System.out.println("Area of Circle: " + circle.calculateArea());
+
+        // Displaying shape information and area of rectangle
+        rectangle.displayShape();
+        System.out.println("Area of Rectangle: " + rectangle.calculateArea());
+    }
+}

@@ -1,0 +1,66 @@
+//Write a java program to implement the hierarchical inheritance
+// Parent class (Superclass)
+class Animal {
+    // Instance variable
+    String name;
+
+    // Constructor
+    public Animal(String name) {
+        this.name = name;
+    }
+
+    // Method to make the animal eat
+    public void eat() {
+        System.out.println(name + " is eating.");
+    }
+
+    // Method to make the animal sleep
+    public void sleep() {
+        System.out.println(name + " is sleeping.");
+    }
+}
+
+// Child class 1 (Subclass) - inherits from Animal class
+class Dog extends Animal {
+
+    // Constructor for Dog class
+    public Dog(String name) {
+        super(name); // Calling the parent class constructor to initialize the name
+    }
+
+    // Method specific to Dog class
+    public void bark() {
+        System.out.println(name + " is barking.");
+    }
+}
+
+// Child class 2 (Subclass) - inherits from Animal class
+class Cat extends Animal {
+
+    // Constructor for Cat class
+    public Cat(String name) {
+        super(name); // Calling the parent class constructor to initialize the name
+    }
+
+    // Method specific to Cat class
+    public void meow() {
+        System.out.println(name + " is meowing.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Creating objects of Dog and Cat classes (both inherit from Animal class)
+        Dog myDog = new Dog("Buddy");
+        Cat myCat = new Cat("Whiskers");
+
+        // Calling methods from both the parent and child class
+        myDog.eat();      // Inherited from Animal class
+        myDog.sleep();    // Inherited from Animal class
+        myDog.bark();     // Defined in Dog class
+
+        myCat.eat();      // Inherited from Animal class
+        myCat.sleep();    // Inherited from Animal class
+        myCat.meow();     // Defined in Cat class
+    }
+}

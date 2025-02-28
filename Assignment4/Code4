@@ -1,0 +1,24 @@
+//Implementation of this keyword to invoke current class constructor.
+class ThisKeywordConstructorExample {
+
+    // Instance variables
+    int x, y;
+
+    // Constructor 1: No parameters
+    public ThisKeywordConstructorExample() {
+        this(10, 20); // Calling Constructor 2 using 'this'
+        System.out.println("No-argument constructor called.");
+    }
+
+    // Constructor 2: Two parameters
+    public ThisKeywordConstructorExample(int x, int y) {
+        this.x = x; // Using 'this' to differentiate between instance variable and parameter
+        this.y = y;
+        System.out.println("Constructor with two parameters called: " + x + ", " + y);
+    }
+
+    public static void main(String[] args) {
+        // Creating an object using the no-argument constructor
+        ThisKeywordConstructorExample obj = new ThisKeywordConstructorExample();
+    }
+}

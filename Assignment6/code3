@@ -1,0 +1,57 @@
+//Write a java program to implement multi level inheritance with the help of interface
+// Base interface Shape
+interface Shape {
+    // Abstract method to calculate area
+    double calculateArea();
+    
+    // Default method that can be used by any class implementing the interface
+    default void displayShape() {
+        System.out.println("This is a shape.");
+    }
+}
+
+// Interface Polygon extending Shape interface
+interface Polygon extends Shape {
+    // Additional method to calculate perimeter (specific to polygons)
+    double calculatePerimeter();
+}
+
+// Rectangle class implements Polygon interface (multi-level inheritance)
+class Rectangle implements Polygon {
+    private double length;
+    private double width;
+
+    // Constructor to initialize length and width
+    public Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    // Implementing the calculateArea method from Shape interface
+    @Override
+    public double calculateArea() {
+        return length * width; // Area of rectangle = length * width
+    }
+
+    // Implementing the calculatePerimeter method from Polygon interface
+    @Override
+    public double calculatePerimeter() {
+        return 2 * (length + width); // Perimeter of rectangle = 2 * (length + width)
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Create an object of Rectangle
+        Polygon rectangle = new Rectangle(4.0, 6.0);  // Rectangle with length 4 and width 6
+
+        // Display shape information
+        rectangle.displayShape();
+
+        // Display area of rectangle
+        System.out.println("Area of Rectangle: " + rectangle.calculateArea());
+
+        // Display perimeter of rectangle
+        System.out.println("Perimeter of Rectangle: " + rectangle.calculatePerimeter());
+    }
+}

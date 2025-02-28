@@ -1,0 +1,55 @@
+//Write a java program to implement the static keyword 
+class StaticKeywordExample {
+
+    // Static variable
+    static int staticCount = 0;
+    
+    // Instance variable
+    int instanceCount = 0;
+
+    // Constructor
+    public StaticKeywordExample() {
+        staticCount++;  // Static variable is shared by all instances
+        instanceCount++; // Instance variable is unique for each object
+    }
+    
+    // Static method
+    public static void displayStaticCount() {
+        // Static method can access static variables
+        System.out.println("Static Count: " + staticCount);
+    }
+
+    // Instance method
+    public void displayInstanceCount() {
+        // Instance method can access both static and instance variables
+        System.out.println("Instance Count: " + instanceCount);
+    }
+
+    // Static block
+    static {
+        System.out.println("Static block executed!");
+        staticCount = 10;  // Initialize static variable
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        
+        // Display static count before creating any object
+        StaticKeywordExample.displayStaticCount(); // Called without creating an object
+        
+        // Creating instances of StaticKeywordExample
+        StaticKeywordExample obj1 = new StaticKeywordExample();
+        StaticKeywordExample obj2 = new StaticKeywordExample();
+        
+        // Display instance count and static count for both objects
+        obj1.displayInstanceCount();
+        obj1.displayStaticCount();
+        
+        obj2.displayInstanceCount();
+        obj2.displayStaticCount();
+        
+        // Static variables are shared among all instances
+        System.out.println("Static count after creating objects: " + StaticKeywordExample.staticCount);
+    }
+}

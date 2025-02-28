@@ -1,0 +1,22 @@
+//Write a java program to access the methods from package & subpackage both
+// File: MainClass.java
+
+import company.CompanyInfo;          // Import parent package class
+import company.employee.Employee;    // Import subpackage class
+import company.employee.Manager;     // Import subpackage class
+
+public class MainClass {
+    public static void main(String[] args) {
+        // Create objects for classes in the parent package and subpackage
+        CompanyInfo company = new CompanyInfo();
+        Employee employee = new Employee("John Doe", 101);
+        Manager manager = new Manager("Jane Smith", 102, "HR");
+
+        // Access methods from both package and subpackage
+        company.displayCompanyDetails();   // From parent package
+        System.out.println();
+        employee.displayEmployeeDetails(); // From subpackage
+        System.out.println();
+        manager.displayManagerDetails();   // From subpackage
+    }
+}

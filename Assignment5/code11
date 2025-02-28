@@ -1,0 +1,56 @@
+//Write a program to define a class Fraction having data members numerator and denominator.Initialize three objects using different constructors and display its fractional value.
+// Class to represent a Fraction
+class Fraction {
+    // Instance variables for numerator and denominator
+    int numerator, denominator;
+
+    // Default constructor (fraction = 0/1)
+    public Fraction() {
+        this.numerator = 0;
+        this.denominator = 1;
+    }
+
+    // Parameterized constructor (fraction = numerator/denominator)
+    public Fraction(int numerator, int denominator) {
+        this.numerator = numerator;
+        this.denominator = denominator;
+    }
+
+    // Constructor with only numerator (assumes denominator = 1)
+    public Fraction(int numerator) {
+        this.numerator = numerator;
+        this.denominator = 1;
+    }
+
+    // Method to display the fraction and its value
+    public void displayFraction() {
+        // Display the fraction
+        System.out.println("Fraction: " + numerator + "/" + denominator);
+        // Display the fractional value
+        double value = (double) numerator / denominator;
+        System.out.println("Fractional value: " + value);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Creating objects of Fraction class using different constructors
+
+        // Using default constructor
+        Fraction fraction1 = new Fraction();
+        // Using parameterized constructor (e.g., 2/3)
+        Fraction fraction2 = new Fraction(2, 3);
+        // Using constructor with only numerator (e.g., 5/1)
+        Fraction fraction3 = new Fraction(5);
+
+        // Displaying the fractions and their values
+        System.out.println("Fraction 1:");
+        fraction1.displayFraction();  // Expected output: 0/1, 0.0
+
+        System.out.println("\nFraction 2:");
+        fraction2.displayFraction();  // Expected output: 2/3, 0.6666666666666666
+
+        System.out.println("\nFraction 3:");
+        fraction3.displayFraction();  // Expected output: 5/1, 5.0
+    }
+}

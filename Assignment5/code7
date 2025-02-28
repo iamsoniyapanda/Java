@@ -1,0 +1,40 @@
+//Implementation of dynamic method dispatch in java.
+// Parent class (Superclass)
+class Animal {
+    // Method in the parent class
+    public void sound() {
+        System.out.println("Animal makes a sound.");
+    }
+}
+
+// Child class 1 (Subclass)
+class Dog extends Animal {
+    // Overriding the sound() method in Dog class
+    @Override
+    public void sound() {
+        System.out.println("Dog barks.");
+    }
+}
+
+// Child class 2 (Subclass)
+class Cat extends Animal {
+    // Overriding the sound() method in Cat class
+    @Override
+    public void sound() {
+        System.out.println("Cat meows.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Creating references of Animal class
+        Animal myAnimal = new Animal();  // Animal object
+        Animal myDog = new Dog();        // Dog object (but reference is of Animal type)
+        Animal myCat = new Cat();        // Cat object (but reference is of Animal type)
+
+        // Dynamic method dispatch: The method that gets called is determined at runtime
+        myAnimal.sound();  // Calls Animal's sound()
+        myDog.sound();     // Calls Dog's sound() - This is runtime polymorphism
+        myCat.sound();     // Calls Cat's sound() - This is runtime polymorphism
+    }
+}

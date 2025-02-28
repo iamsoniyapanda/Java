@@ -1,0 +1,42 @@
+//Implementation of this keyword to pass as an argument in the method.
+class ThisKeywordPassAsArgumentExample {
+
+    // Instance variables
+    String name;
+    int age;
+
+    // Constructor to initialize the object
+    public ThisKeywordPassAsArgumentExample(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Method to display information of the current object
+    public void displayInfo() {
+        System.out.println("Name: " + name + ", Age: " + age);
+    }
+
+    // Method that accepts the current object as an argument
+    public void compareAge(ThisKeywordPassAsArgumentExample other) {
+        if (this.age == other.age) {
+            System.out.println("Both have the same age.");
+        } else if (this.age > other.age) {
+            System.out.println(this.name + " is older.");
+        } else {
+            System.out.println(other.name + " is older.");
+        }
+    }
+
+    public static void main(String[] args) {
+        // Creating two objects
+        ThisKeywordPassAsArgumentExample person1 = new ThisKeywordPassAsArgumentExample("John", 25);
+        ThisKeywordPassAsArgumentExample person2 = new ThisKeywordPassAsArgumentExample("Alice", 30);
+
+        // Displaying the information of both persons
+        person1.displayInfo();
+        person2.displayInfo();
+
+        // Passing 'this' as an argument to compare ages
+        person1.compareAge(person2);  // 'person1' passes 'this' to 'compareAge'
+    }
+}

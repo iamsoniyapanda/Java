@@ -1,0 +1,29 @@
+//Implementation of this keyword to invoke current class method
+class ThisKeywordExample {
+
+    // Instance variable
+    int number;
+
+    // Constructor to initialize the number
+    public ThisKeywordExample(int number) {
+        this.number = number;  // Using 'this' to refer to the instance variable
+    }
+
+    // Method to print the value of number
+    public void printNumber() {
+        System.out.println("Number: " + number);
+    }
+
+    // Method that invokes the current class method using 'this'
+    public void invokePrintNumber() {
+        this.printNumber();  // Using 'this' to invoke the current class method
+    }
+
+    public static void main(String[] args) {
+        // Creating an object of ThisKeywordExample
+        ThisKeywordExample obj = new ThisKeywordExample(42);
+
+        // Calling the method to invoke printNumber using 'this'
+        obj.invokePrintNumber();
+    }
+}

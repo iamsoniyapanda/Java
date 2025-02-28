@@ -1,0 +1,47 @@
+//Write a java program to implement the single inheritance
+// Parent class (Superclass)
+class Animal {
+    // Instance variable
+    String name;
+
+    // Constructor
+    public Animal(String name) {
+        this.name = name;
+    }
+
+    // Method in parent class
+    public void eat() {
+        System.out.println(name + " is eating.");
+    }
+
+    public void sleep() {
+        System.out.println(name + " is sleeping.");
+    }
+}
+
+// Child class (Subclass) - inherits from Animal class
+class Dog extends Animal {
+
+    // Constructor for Dog class
+    public Dog(String name) {
+        // Calling the parent class constructor to initialize the name
+        super(name);
+    }
+
+    // Method specific to the Dog class
+    public void bark() {
+        System.out.println(name + " is barking.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Creating an object of the Dog class (which inherits from Animal)
+        Dog myDog = new Dog("Buddy");
+
+        // Calling methods from both the parent and child class
+        myDog.eat();      // Inherited from Animal class
+        myDog.sleep();    // Inherited from Animal class
+        myDog.bark();     // Defined in Dog class
+    }
+}

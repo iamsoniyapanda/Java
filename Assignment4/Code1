@@ -1,0 +1,37 @@
+//Implementation of method overloading with respect to parameter number, parameter data type.
+public class MethodOverloadingExample {
+
+    // Overloading by changing the number of parameters
+    public int add(int a, int b) {
+        return a + b; // Adds two integers
+    }
+
+    public int add(int a, int b, int c) {
+        return a + b + c; // Adds three integers
+    }
+
+    // Overloading by changing the data type of parameters
+    public double add(double a, double b) {
+        return a + b; // Adds two double values
+    }
+
+    public double add(int a, double b) {
+        return a + b; // Adds an integer and a double
+    }
+
+    public static void main(String[] args) {
+        MethodOverloadingExample obj = new MethodOverloadingExample();
+
+        // Calling the method to add two integers
+        System.out.println("Sum of 10 and 20 (int): " + obj.add(10, 20)); 
+
+        // Calling the method to add three integers
+        System.out.println("Sum of 10, 20, and 30 (int): " + obj.add(10, 20, 30)); 
+
+        // Calling the method to add two double values
+        System.out.println("Sum of 10.5 and 20.5 (double): " + obj.add(10.5, 20.5));
+
+        // Calling the method to add an integer and a double
+        System.out.println("Sum of 10 and 20.5 (int and double): " + obj.add(10, 20.5));
+    }
+}

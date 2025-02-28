@@ -1,0 +1,28 @@
+//Prove that this keyword refers to the current class instance variable.
+class ThisKeywordExample {
+    
+    // Instance variables (fields)
+    int number;
+    String name;
+    
+    // Constructor with parameters
+    public ThisKeywordExample(int number, String name) {
+        this.number = number;   // 'this.number' refers to the instance variable
+        this.name = name;       // 'this.name' refers to the instance variable
+    }
+    
+    // Method to display the values
+    public void displayInfo() {
+        // Using 'this' to refer to the instance variables
+        System.out.println("Number: " + this.number);  // Refers to the instance variable 'number'
+        System.out.println("Name: " + this.name);      // Refers to the instance variable 'name'
+    }
+    
+    public static void main(String[] args) {
+        // Creating an object of ThisKeywordExample
+        ThisKeywordExample obj = new ThisKeywordExample(10, "Alice");
+        
+        // Calling the method to display information
+        obj.displayInfo();
+    }
+}

@@ -1,0 +1,41 @@
+//Implementation of this keyword as local variable suppressor.
+class ThisKeywordLocalVariableSuppressor {
+    
+    // Instance variables (fields)
+    String name;
+    int age;
+    
+    // Constructor to initialize the instance variables
+    public ThisKeywordLocalVariableSuppressor(String name, int age) {
+        // Here, the constructor parameters 'name' and 'age' are shadowing the instance variables
+        this.name = name;  // 'this.name' refers to the instance variable, not the parameter
+        this.age = age;    // 'this.age' refers to the instance variable, not the parameter
+    }
+
+    // Method to update the name and age of the object
+    public void setDetails(String name, int age) {
+        // The method parameters 'name' and 'age' are shadowing the instance variables
+        this.name = name;  // 'this.name' refers to the instance variable
+        this.age = age;    // 'this.age' refers to the instance variable
+    }
+    
+    // Method to display the values of instance variables
+    public void displayInfo() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+
+    public static void main(String[] args) {
+        // Creating an object of ThisKeywordLocalVariableSuppressor
+        ThisKeywordLocalVariableSuppressor obj = new ThisKeywordLocalVariableSuppressor("Alice", 25);
+
+        // Displaying the initial values
+        obj.displayInfo();
+
+        // Updating the values using setDetails method
+        obj.setDetails("Bob", 30);
+
+        // Displaying the updated values
+        obj.displayInfo();
+    }
+}

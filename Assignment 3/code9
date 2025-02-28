@@ -1,0 +1,181 @@
+//Write java codes to implement the followings – Basic string handling concepts- Concept ofmutable and immutable string, Methods of String class-charAt(), compareTo(), equals(),equalsIgnoreCase(), indexOf(), length() , substring().; toCharArray(), toLowerCase(), toString(),toUpperCase() , trim() , valueOf() methods
+public class ImmutableStringExample {
+    public static void main(String[] args) {
+        String str = "Hello";
+        str = str.concat(" World"); // Creates a new String object, does not modify the original one
+        System.out.println(str); // Output: Hello World
+    }
+}
+
+
+public class MutableStringExample {
+    public static void main(String[] args) {
+        StringBuilder strBuilder = new StringBuilder("Hello");
+        strBuilder.append(" World"); // Modifies the original object
+        System.out.println(strBuilder); // Output: Hello World
+    }
+}
+
+
+public class CharAtExample {
+    public static void main(String[] args) {
+        String str = "Hello";
+        char ch = str.charAt(1); // Returns 'e'
+        System.out.println(ch); // Output: e
+    }
+}
+
+
+public class CompareToExample {
+    public static void main(String[] args) {
+        String str1 = "Apple";
+        String str2 = "Banana";
+        int result = str1.compareTo(str2);
+        System.out.println(result); // Output: Negative number because "Apple" is lexicographically less than "Banana"
+    }
+}
+
+
+public class EqualsExample {
+    public static void main(String[] args) {
+        String str1 = "Hello";
+        String str2 = "Hello";
+        String str3 = "World";
+        System.out.println(str1.equals(str2)); // Output: true
+        System.out.println(str1.equals(str3)); // Output: false
+    }
+}
+
+public class EqualsIgnoreCaseExample {
+    public static void main(String[] args) {
+        String str1 = "hello";
+        String str2 = "HELLO";
+        System.out.println(str1.equalsIgnoreCase(str2)); // Output: true
+    }
+}
+
+
+public class IndexOfExample {
+    public static void main(String[] args) {
+        String str = "Hello, World!";
+        int index = str.indexOf("World");
+        System.out.println(index); // Output: 7
+    }
+}
+
+public class LengthExample {
+    public static void main(String[] args) {
+        String str = "Hello";
+        System.out.println(str.length()); // Output: 5
+    }
+}
+
+public class SubstringExample {
+    public static void main(String[] args) {
+        String str = "Hello, World!";
+        String subStr = str.substring(7, 12); // Extracts substring from index 7 to 11
+        System.out.println(subStr); // Output: World
+    }
+}
+
+
+public class ToCharArrayExample {
+    public static void main(String[] args) {
+        String str = "Hello";
+        char[] charArray = str.toCharArray();
+        for (char c : charArray) {
+            System.out.println(c); // Output: H e l l o
+        }
+    }
+}
+
+
+public class ToLowerCaseExample {
+    public static void main(String[] args) {
+        String str = "Hello";
+        String lowerStr = str.toLowerCase();
+        System.out.println(lowerStr); // Output: hello
+    }
+}
+
+
+public class ToUpperCaseExample {
+    public static void main(String[] args) {
+        String str = "Hello";
+        String upperStr = str.toUpperCase();
+        System.out.println(upperStr); // Output: HELLO
+    }
+}
+
+public class ToStringExample {
+    public static void main(String[] args) {
+        Integer num = 100;
+        String str = num.toString(); // Converts Integer to String
+        System.out.println(str); // Output: 100
+    }
+}
+
+
+public class TrimExample {
+    public static void main(String[] args) {
+        String str = "  Hello World  ";
+        String trimmedStr = str.trim();
+        System.out.println(trimmedStr); // Output: Hello World
+    }
+}
+
+
+public class ValueOfExample {
+    public static void main(String[] args) {
+        int num = 123;
+        String str = String.valueOf(num); // Converts int to String
+        System.out.println(str); // Output: 123
+    }
+}
+
+
+public class StringMethodsExample {
+    public static void main(String[] args) {
+        String str = " Hello World ";
+
+        // charAt
+        System.out.println("Character at index 1: " + str.charAt(1));
+
+        // compareTo
+        System.out.println("Comparison with 'Hello World': " + str.compareTo("Hello World"));
+
+        // equals
+        System.out.println("Equals 'hello world': " + str.equals("hello world"));
+
+        // equalsIgnoreCase
+        System.out.println("EqualsIgnoreCase 'hello world': " + str.equalsIgnoreCase("hello world"));
+
+        // indexOf
+        System.out.println("Index of 'World': " + str.indexOf("World"));
+
+        // length
+        System.out.println("Length of string: " + str.length());
+
+        // substring
+        System.out.println("Substring (6, 11): " + str.substring(6, 11));
+
+        // toCharArray
+        System.out.println("Character Array: " + str.toCharArray());
+
+        // toLowerCase
+        System.out.println("Lowercase: " + str.toLowerCase());
+
+        // toUpperCase
+        System.out.println("Uppercase: " + str.toUpperCase());
+
+        // toString
+        Integer number = 100;
+        System.out.println("Integer to String: " + number.toString());
+
+        // trim
+        System.out.println("Trimmed: '" + str.trim() + "'");
+
+        // valueOf
+        System.out.println("Value of 123: " + String.valueOf(123));
+    }
+}

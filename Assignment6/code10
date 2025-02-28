@@ -1,0 +1,94 @@
+//Create an abstract class Accounts with the following details:
+//Data Members: (a) Balance (b) accountNumber (c) accountHoldersName (d) address
+//Methods: (a) withdrawl()- abstract , (b) deposit()- abstract , (c) display() to show the balance of the
+//account number
+//Create a subclass of this class SavingsAccount and add the following details:
+//Data Members: (a) rateOfInterest Methods: (a) calculateAount()
+// Abstract class Accounts
+abstract class Accounts {
+    // Data members
+    protected double balance;
+    protected int accountNumber;
+    protected String accountHoldersName;
+    protected String address;
+
+    // Constructor to initialize the values
+    public Accounts(int accountNumber, String accountHoldersName, String address, double balance) {
+        this.accountNumber = accountNumber;
+        this.accountHoldersName = accountHoldersName;
+        this.address = address;
+        this.balance = balance;
+    }
+
+    // Abstract methods
+    public abstract void withdrawal(double amount);
+    public abstract void deposit(double amount);
+
+    // Method to display the balance
+    public void display() {
+        System.out.println("Account Number: " + accountNumber);
+        System.out.println("Account Holder's Name: " + accountHoldersName);
+        System.out.println("Address: " + address);
+        System.out.println("Current Balance: " + balance);
+    }
+}
+
+// Subclass SavingsAccount which extends Accounts
+class SavingsAccount extends Accounts {
+    // Data member for rate of interest
+    private double rateOfInterest;
+
+    // Constructor to initialize the values for SavingsAccount
+    public SavingsAccount(int accountNumber, String accountHoldersName, String address, double balance, double rateOfInterest) {
+        super(accountNumber, accountHoldersName, address, balance);
+        this.rateOfInterest = rateOfInterest;
+    }
+
+    // Implement withdrawal method
+    @Override
+    public void withdrawal(double amount) {
+        if (amount <= balance) {
+            balance -= amount;
+            System.out.println("Withdrawal of " + amount + " successful.");
+        } else {
+            System.out.println("Insufficient funds. Withdrawal failed.");
+        }
+    }
+
+    // Implement deposit method
+    @Override
+    public void deposit(double amount) {
+        balance += amount;
+        System.out.println("Deposit of " + amount + " successful.");
+    }
+
+    // Method to calculate amount after applying rate of interest
+    public double calculateAmount() {
+        return balance + (balance * rateOfInterest / 100);
+    }
+}
+
+// Main class to demonstrate the working of Accounts and SavingsAccount
+public class BankAccountApp {
+    public static void main(String[] args) {
+        // Creating a SavingsAccount object
+        SavingsAccount account = new SavingsAccount(101, "John Doe", "123 Elm St", 1000.0, 5.0);
+
+        // Displaying account details
+        account.display();
+
+        // Deposit money into the account
+        account.deposit(500.0);
+        account.display();
+
+        // Withdraw money from the account
+        account.withdrawal(200.0);
+        account.display();
+
+        // Calculate amount after interest
+        double finalAmount = account.calculateAmount();
+        System.out.println("Amount after interest: " + finalAmount);
+    }
+}
+
+

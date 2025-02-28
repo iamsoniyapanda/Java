@@ -1,0 +1,57 @@
+//Write a java program to implement super keyword in java.
+// Parent class Animal
+class Animal {
+    String name;
+    
+    // Constructor of the parent class
+    public Animal(String name) {
+        this.name = name;  // Set the name of the animal
+        System.out.println("Animal constructor called");
+    }
+    
+    // Method in the parent class
+    public void sound() {
+        System.out.println("Animals make sounds");
+    }
+    
+    // Field in the parent class
+    public void displayInfo() {
+        System.out.println("This is an animal named: " + name);
+    }
+}
+
+// Child class Dog extends Animal
+class Dog extends Animal {
+    
+    // Constructor of the child class
+    public Dog(String name) {
+        super(name);  // Call the constructor of the parent class
+        System.out.println("Dog constructor called");
+    }
+    
+    // Method in the child class overriding the parent class method
+    @Override
+    public void sound() {
+        super.sound();  // Call the parent class method
+        System.out.println("Dogs bark");
+    }
+
+    // Method in the child class to display additional information
+    public void displayInfo() {
+        super.displayInfo();  // Call the parent class method
+        System.out.println("This is a dog named: " + name);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Create an object of the Dog class
+        Dog dog = new Dog("Buddy");
+        
+        // Call the method to show sound
+        dog.sound();
+        
+        // Call the method to display info
+        dog.displayInfo();
+    }
+}

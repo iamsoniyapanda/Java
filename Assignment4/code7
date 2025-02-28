@@ -1,36 +1,44 @@
-//Implementation of this keyword to pass as argument in the constructor call.
-class Person {
-
+//Implement this keyword can be used to return current class instance.
+class ThisKeywordReturnExample {
+    
     // Instance variables
+    int number;
     String name;
-    int age;
 
-    // Constructor 1: Accepts no parameters
-    public Person() {
-        // Calls Constructor 2 using this keyword, passing default values
-        this("Default Name", 25);
-        System.out.println("No-argument constructor called.");
+    // Constructor to initialize the instance variables
+    public ThisKeywordReturnExample(int number, String name) {
+        this.number = number;
+        this.name = name;
     }
 
-    // Constructor 2: Accepts name and age parameters
-    public Person(String name, int age) {
-        this.name = name;  // Use 'this' to refer to instance variables
-        this.age = age;
-        System.out.println("Constructor with parameters called: " + name + ", " + age);
+    // Method that returns the current class instance using 'this'
+    public ThisKeywordReturnExample setNumber(int number) {
+        this.number = number; // Sets the instance variable
+        return this; // Returns the current instance of the class
     }
 
-    // Method to display object information
+    public ThisKeywordReturnExample setName(String name) {
+        this.name = name; // Sets the instance variable
+        return this; // Returns the current instance of the class
+    }
+
+    // Method to display the values
     public void displayInfo() {
-        System.out.println("Name: " + name + ", Age: " + age);
+        System.out.println("Number: " + number);
+        System.out.println("Name: " + name);
     }
 
     public static void main(String[] args) {
-        // Creating an object using the no-argument constructor
-        Person person = new Person();
-        person.displayInfo(); // Displaying information of the current object
+        // Creating an object of ThisKeywordReturnExample and chaining methods
+        ThisKeywordReturnExample obj = new ThisKeywordReturnExample(10, "Alice");
 
-        // Creating another object using the parameterized constructor
-        Person person2 = new Person("Alice", 30);
-        person2.displayInfo(); // Displaying information of the second object
+        // Using method chaining to set values and return the same object
+        obj.setNumber(20).setName("Bob");
+
+        // Displaying the updated values
+        obj.displayInfo();
     }
 }
+
+
+   

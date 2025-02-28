@@ -1,0 +1,43 @@
+//Write a java program to implement super() method with parameter.
+// Parent class Animal
+class Animal {
+    String name;
+
+    // Constructor of the parent class with a parameter
+    public Animal(String name) {
+        this.name = name;  // Initialize the name of the animal
+        System.out.println("Animal class constructor called with name: " + name);
+    }
+
+    // Method in the parent class
+    public void sound() {
+        System.out.println(name + " makes sounds");
+    }
+}
+
+// Child class Dog extends Animal
+class Dog extends Animal {
+    
+    // Constructor of the child class with a parameter
+    public Dog(String name) {
+        super(name);  // Call the parent class constructor and pass the name
+        System.out.println("Dog class constructor called with name: " + name);
+    }
+
+    // Method in the child class
+    @Override
+    public void sound() {
+        super.sound();  // Call the method from the parent class
+        System.out.println(name + " barks");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Create an object of the Dog class and pass the name "Buddy"
+        Dog dog = new Dog("Buddy");
+
+        // Call the sound method
+        dog.sound();
+    }
+}

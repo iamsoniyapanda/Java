@@ -1,0 +1,30 @@
+//Write a java program to take input from keyboard using Scanner class.
+import java.util.Scanner; // Import the Scanner class
+
+public class ScannerExample {
+
+    public static void main(String[] args) {
+        // Create a Scanner object to read input from the keyboard
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user for their name
+        System.out.print("Enter your name: ");
+        String name = scanner.nextLine(); // Reads the whole line as a string
+
+        // Prompt the user for their age
+        System.out.print("Enter your age: ");
+        int age = scanner.nextInt(); // Reads an integer
+
+        // Prompt the user for their height
+        System.out.print("Enter your height in meters: ");
+        double height = scanner.nextDouble(); // Reads a double value
+
+        // Display the entered information
+        System.out.println("Hello, " + name + ".");
+        System.out.println("You are " + age + " years old.");
+        System.out.println("Your height is " + height + " meters.");
+
+        // Close the scanner object to avoid memory leaks
+        scanner.close();
+    }
+}

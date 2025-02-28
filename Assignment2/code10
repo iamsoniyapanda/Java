@@ -1,0 +1,54 @@
+//Implementation of call by value and call by reference.
+public class CallByValueExample {
+
+    // Method that takes an integer and modifies it
+    public void modifyValue(int num) {
+        num = num + 10; // Modifying the copy of the value
+        System.out.println("Inside modifyValue method: " + num);
+    }
+
+    public static void main(String[] args) {
+        CallByValueExample example = new CallByValueExample();
+
+        int value = 5;
+        System.out.println("Before modifyValue method: " + value);
+        example.modifyValue(value); // Passing the value to the method
+        System.out.println("After modifyValue method: " + value); // value remains unchanged
+    }
+}
+
+
+
+
+
+class Person {
+    String name;
+
+    // Constructor
+    Person(String name) {
+        this.name = name;
+    }
+}
+
+public class CallByReferenceExample {
+
+    // Method that modifies the name of the Person object
+    public void modifyPersonName(Person p) {
+        p.name = "Alice"; // Modifying the name of the object
+    }
+
+    public static void main(String[] args) {
+        CallByReferenceExample example = new CallByReferenceExample();
+
+        // Create a Person object
+        Person person = new Person("Bob");
+
+        System.out.println("Before modifyPersonName method: " + person.name);
+
+        // Passing the object to the method
+        example.modifyPersonName(person);
+
+        // After calling the method, the original object is modified
+        System.out.println("After modifyPersonName method: " + person.name);
+    }
+}

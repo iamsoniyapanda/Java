@@ -1,0 +1,23 @@
+//Write a java program to create package.
+// File: HelloWorld.java
+package myPackage;  // Define the package
+
+public class HelloWorld {
+    public void greet() {
+        System.out.println("Hello from the myPackage!");
+    }
+}
+
+
+// File: MainClass.java
+
+// Import the HelloWorld class from myPackage
+import myPackage.HelloWorld;
+
+public class MainClass {
+    public static void main(String[] args) {
+        // Create an instance of HelloWorld class and call its method
+        HelloWorld obj = new HelloWorld();
+        obj.greet();  // This will print: "Hello from the myPackage!"
+    }
+}

@@ -1,0 +1,51 @@
+//Write a java program to implement multiple inheritance using interface
+// Interface Shape with a method to calculate area
+interface Shape {
+    // Abstract method to calculate area
+    double calculateArea();
+}
+
+// Interface Color with a method to display color
+interface Color {
+    // Abstract method to display color
+    void displayColor();
+}
+
+// Rectangle class implements both Shape and Color interfaces
+class Rectangle implements Shape, Color {
+    private double length;
+    private double width;
+    private String color;
+
+    // Constructor to initialize length, width, and color
+    public Rectangle(double length, double width, String color) {
+        this.length = length;
+        this.width = width;
+        this.color = color;
+    }
+
+    // Implementing the calculateArea method from Shape interface
+    @Override
+    public double calculateArea() {
+        return length * width;  // Area of rectangle = length * width
+    }
+
+    // Implementing the displayColor method from Color interface
+    @Override
+    public void displayColor() {
+        System.out.println("The color of the rectangle is: " + color);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Create an object of Rectangle that implements both Shape and Color interfaces
+        Rectangle rectangle = new Rectangle(4.0, 6.0, "Red");
+
+        // Display area of the rectangle
+        System.out.println("Area of Rectangle: " + rectangle.calculateArea());
+
+        // Display color of the rectangle
+        rectangle.displayColor();
+    }
+}

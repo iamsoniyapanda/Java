@@ -1,0 +1,27 @@
+//Write a java program to stop method overriding.
+// Parent class (Superclass)
+class Animal {
+    // Final method - cannot be overridden
+    public final void sound() {
+        System.out.println("Animal makes a sound.");
+    }
+}
+
+// Child class (Subclass)
+class Dog extends Animal {
+    // Trying to override the sound() method (This will give a compile-time error)
+    // @Override
+    // public void sound() {
+    //     System.out.println("Dog barks.");
+    // }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Creating an object of Dog class
+        Dog myDog = new Dog();
+        
+        // Calling the sound() method, which is final in Animal class
+        myDog.sound(); // This will call the Animal class's sound() method
+    }
+}

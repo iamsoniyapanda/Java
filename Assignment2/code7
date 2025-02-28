@@ -1,0 +1,17 @@
+//Implementation of default, no argument Constructor.
+public class Person {
+    // Fields (Attributes) of the class
+    String name;
+    int age;
+
+    // No constructors defined explicitly
+    // Java will provide a default constructor (with no arguments)
+
+    public static void main(String[] args) {
+        // Creating an instance of Person class
+        Person person = new Person();
+        // Since the default constructor is invoked, the attributes will be assigned default values
+        System.out.println("Name: " + person.name); // null (default value for String)
+        System.out.println("Age: " + person.age);   // 0 (default value for int)
+    }
+}

@@ -1,0 +1,24 @@
+//Write a Java program to calculate the sum of natural numbers up to a certain range
+import java.util.Scanner;
+
+public class SumOfNaturalNumbers {
+
+    public static void main(String[] args) {
+        // Create a Scanner object to read input from the user
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user to enter a number
+        System.out.print("Enter the range (n) to calculate the sum of natural numbers: ");
+        int n = scanner.nextInt();
+
+        // Calculate the sum using the formula
+        int sum = n * (n + 1) / 2;
+
+        // Output the result
+        System.out.println("The sum of natural numbers up to " + n + " is: " + sum);
+
+        // Close the scanner object
+        scanner.close();
+    }
+}
+

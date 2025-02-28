@@ -1,0 +1,31 @@
+//Write a java program to implement of constructor overloading
+public class ConstructorOverloadingExample {
+
+    // Constructor with no parameters (default constructor)
+    public ConstructorOverloadingExample() {
+        System.out.println("No-argument constructor called.");
+    }
+
+    // Constructor with one parameter
+    public ConstructorOverloadingExample(int a) {
+        System.out.println("Constructor with one parameter called: " + a);
+    }
+
+    // Constructor with two parameters
+    public ConstructorOverloadingExample(int a, String name) {
+        System.out.println("Constructor with two parameters called: " + a + ", " + name);
+    }
+
+    // Constructor with three parameters
+    public ConstructorOverloadingExample(int a, String name, double b) {
+        System.out.println("Constructor with three parameters called: " + a + ", " + name + ", " + b);
+    }
+
+    public static void main(String[] args) {
+        // Creating objects with different constructors
+        ConstructorOverloadingExample obj1 = new ConstructorOverloadingExample();
+        ConstructorOverloadingExample obj2 = new ConstructorOverloadingExample(10);
+        ConstructorOverloadingExample obj3 = new ConstructorOverloadingExample(20, "John");
+        ConstructorOverloadingExample obj4 = new ConstructorOverloadingExample(30, "Jane", 25.5);
+    }
+}

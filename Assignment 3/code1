@@ -1,0 +1,29 @@
+//Write a java program to implement BufferedReader class
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
+
+public class BufferedReaderExample {
+
+    public static void main(String[] args) {
+        // Create BufferedReader object to read from the console
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+        try {
+            // Ask user for their name
+            System.out.print("Enter your name: ");
+            String name = reader.readLine(); // Reading a line of text from the user
+
+            // Ask user for their age
+            System.out.print("Enter your age: ");
+            String ageString = reader.readLine();
+            int age = Integer.parseInt(ageString); // Converting the string to integer
+
+            // Display the input
+            System.out.println("Hello, " + name + ". You are " + age + " years old.");
+
+        } catch (IOException e) {
+            System.out.println("Error reading input.");
+        }
+    }
+}

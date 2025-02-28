@@ -1,0 +1,54 @@
+//Create an interface called Player. The interface has an abstract method called play() that displays a
+//message describing the meaning of “play” to the class. Create classes called Child, Musician, and
+//Actor that all implement Player. Create an application that demonstrates the use of the
+//classes(UsePlayer.java
+// Define the Player interface
+interface Player {
+    // Abstract method play()
+    void play();
+}
+
+
+// Class Child implements Player interface
+class Child implements Player {
+    // Implement the play() method for Child
+    public void play() {
+        System.out.println("The Child is playing with toys.");
+    }
+}
+
+// Class Musician implements Player interface
+class Musician implements Player {
+    // Implement the play() method for Musician
+    public void play() {
+        System.out.println("The Musician is playing an instrument.");
+    }
+}
+
+// Class Actor implements Player interface
+class Actor implements Player {
+    // Implement the play() method for Actor
+    public void play() {
+        System.out.println("The Actor is performing a play.");
+    }
+}
+
+
+// Application to demonstrate the use of the Player interface
+public class UsePlayer {
+    public static void main(String[] args) {
+        // Create objects of classes that implement Player interface
+        Player child = new Child();
+        Player musician = new Musician();
+        Player actor = new Actor();
+        
+        // Demonstrate polymorphism by calling the play() method on each object
+        System.out.println("Demonstrating play actions:");
+        
+        // Call the play method for each object
+        child.play();       // The Child is playing with toys.
+        musician.play();    // The Musician is playing an instrument.
+        actor.play();       // The Actor is performing a play.
+    }
+}
+

@@ -1,0 +1,29 @@
+//Implementation of parameterized constructor.
+public class Person {
+    // Fields (Attributes) of the class
+    String name;
+    int age;
+
+    // Parameterized constructor
+    public Person(String name, int age) {
+        // Initialize the fields with the values passed to the constructor
+        this.name = name;
+        this.age = age;
+    }
+
+    // Method to display the values of the object
+    public void display() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+
+    public static void main(String[] args) {
+        // Creating instances of the Person class with different values using parameterized constructor
+        Person person1 = new Person("Alice", 25);
+        Person person2 = new Person("Bob", 30);
+        
+        // Display the values for each object
+        person1.display();
+        person2.display();
+    }
+}

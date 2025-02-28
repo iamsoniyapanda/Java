@@ -1,0 +1,61 @@
+//Write a java program to implement the abstraction property
+// Abstract class Shape representing a general shape
+abstract class Shape {
+    // Abstract method to calculate the area (no implementation in the abstract class)
+    public abstract double calculateArea();
+    
+    // Non-abstract method (can be shared among subclasses)
+    public void displayShape() {
+        System.out.println("Displaying shape information.");
+    }
+}
+
+// Subclass Circle that extends Shape
+class Circle extends Shape {
+    private double radius;
+    
+    // Constructor to initialize radius
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+    
+    // Implementing the abstract method to calculate the area of a circle
+    @Override
+    public double calculateArea() {
+        return Math.PI * radius * radius; // Area of circle = π * r^2
+    }
+}
+
+// Subclass Rectangle that extends Shape
+class Rectangle extends Shape {
+    private double length;
+    private double width;
+    
+    // Constructor to initialize length and width
+    public Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+    
+    // Implementing the abstract method to calculate the area of a rectangle
+    @Override
+    public double calculateArea() {
+        return length * width; // Area of rectangle = length * width
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Creating objects of Circle and Rectangle
+        Shape circle = new Circle(5.0);  // Circle with radius 5
+        Shape rectangle = new Rectangle(4.0, 6.0);  // Rectangle with length 4 and width 6
+
+        // Displaying shape information and area of circle
+        circle.displayShape();
+        System.out.println("Area of Circle: " + circle.calculateArea());
+
+        // Displaying shape information and area of rectangle
+        rectangle.displayShape();
+        System.out.println("Area of Rectangle: " + rectangle.calculateArea());
+    }
+}

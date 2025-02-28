@@ -1,0 +1,74 @@
+//Write a Java program to convert a Binary Number to Decimal and Decimal to Binary.
+import java.util.Scanner;
+
+public class NumberConversion {
+
+    // Method to convert Binary to Decimal
+    public static int binaryToDecimal(String binary) {
+        int decimal = 0;
+        int base = 1;  // Base 2 (binary)
+        
+        // Loop through each digit in the binary string (starting from right)
+        for (int i = binary.length() - 1; i >= 0; i--) {
+            // If the digit is '1', add the current base to the decimal result
+            if (binary.charAt(i) == '1') {
+                decimal += base;
+            }
+            base *= 2; // Move to the next power of 2
+        }
+        return decimal;
+    }
+
+    // Method to convert Decimal to Binary
+    public static String decimalToBinary(int decimal) {
+        StringBuilder binary = new StringBuilder();
+        
+        // If the decimal number is 0, return binary as "0"
+        if (decimal == 0) {
+            return "0";
+        }
+
+        // Loop to divide the decimal number by 2 and record the remainders
+        while (decimal > 0) {
+            int remainder = decimal % 2; // Get remainder (0 or 1)
+            binary.insert(0, remainder);  // Insert the remainder at the start
+            decimal = decimal / 2;        // Divide the number by 2
+        }
+        
+        return binary.toString(); // Return the binary representation as a string
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user to choose an option
+        System.out.println("Choose an option:");
+        System.out.println("1. Convert Binary to Decimal");
+        System.out.println("2. Convert Decimal to Binary");
+        int choice = scanner.nextInt();
+
+        if (choice == 1) {
+            // Binary to Decimal Conversion
+            System.out.print("Enter a binary number: ");
+            String binary = scanner.next();
+            // Check if the binary number is valid (contains only 0s and 1s)
+            if (binary.matches("[01]+")) {
+                int decimal = binaryToDecimal(binary);
+                System.out.println("Binary " + binary + " is equal to Decimal " + decimal);
+            } else {
+                System.out.println("Invalid binary number. Please enter only 0s and 1s.");
+            }
+        } else if (choice == 2) {
+            // Decimal to Binary Conversion
+            System.out.print("Enter a decimal number: ");
+            int decimal = scanner.nextInt();
+            String binary = decimalToBinary(decimal);
+            System.out.println("Decimal " + decimal + " is equal to Binary " + binary);
+        } else {
+            System.out.println("Invalid choice. Please select 1 or 2.");
+        }
+
+        // Close the scanner
+        scanner.close();
+    }
+}

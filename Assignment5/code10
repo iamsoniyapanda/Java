@@ -1,0 +1,62 @@
+// Write a program to define a class Employee to accept emp_id, emp _name, basic_salary from the user and display the gross_salary
+import java.util.Scanner;
+
+// Employee class to hold employee details and calculate gross salary
+class Employee {
+    // Instance variables to store employee details
+    int emp_id;
+    String emp_name;
+    double basic_salary;
+    
+    // Constructor to initialize employee details
+    public Employee(int emp_id, String emp_name, double basic_salary) {
+        this.emp_id = emp_id;
+        this.emp_name = emp_name;
+        this.basic_salary = basic_salary;
+    }
+    
+    // Method to calculate the gross salary
+    public double calculateGrossSalary() {
+        // Assuming HRA is 20% and DA is 10% of basic salary
+        double hra = 0.20 * basic_salary;
+        double da = 0.10 * basic_salary;
+        // Gross salary = basic salary + HRA + DA
+        return basic_salary + hra + da;
+    }
+    
+    // Method to display employee details and gross salary
+    public void displayDetails() {
+        System.out.println("Employee ID: " + emp_id);
+        System.out.println("Employee Name: " + emp_name);
+        System.out.println("Basic Salary: " + basic_salary);
+        System.out.println("Gross Salary: " + calculateGrossSalary());
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Create a scanner object to take input from user
+        Scanner scanner = new Scanner(System.in);
+        
+        // Taking employee details as input
+        System.out.print("Enter Employee ID: ");
+        int emp_id = scanner.nextInt();
+        
+        scanner.nextLine();  // Consume the newline character after the integer input
+        
+        System.out.print("Enter Employee Name: ");
+        String emp_name = scanner.nextLine();
+        
+        System.out.print("Enter Basic Salary: ");
+        double basic_salary = scanner.nextDouble();
+        
+        // Creating an Employee object
+        Employee employee = new Employee(emp_id, emp_name, basic_salary);
+        
+        // Displaying employee details and gross salary
+        employee.displayDetails();
+        
+        // Closing the scanner object
+        scanner.close();
+    }
+}

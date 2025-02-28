@@ -1,0 +1,32 @@
+//Implementation of this keyword to pass as argument in the constructor call
+class ThisKeywordConstructorArgumentExample {
+
+    // Instance variables
+    String name;
+    int age;
+
+    // Constructor 1: Accepts no parameters
+    public ThisKeywordConstructorArgumentExample() {
+        // Calling Constructor 2 using 'this' keyword
+        this("Default Name", 25);
+        System.out.println("No-argument constructor called.");
+    }
+
+    // Constructor 2: Accepts name and age
+    public ThisKeywordConstructorArgumentExample(String name, int age) {
+        this.name = name;  // Using 'this' to refer to instance variables
+        this.age = age;
+        System.out.println("Constructor with parameters called: " + name + ", " + age);
+    }
+
+    // Method to display object information
+    public void displayInfo() {
+        System.out.println("Name: " + name + ", Age: " + age);
+    }
+
+    public static void main(String[] args) {
+        // Creating an object using the no-argument constructor
+        ThisKeywordConstructorArgumentExample person = new ThisKeywordConstructorArgumentExample();
+        person.displayInfo(); // Displaying information of the current object
+    }
+}
